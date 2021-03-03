@@ -1,0 +1,41 @@
+<!-- pipes are used to transform data before displaying in browser to desired o/p form -->
+<!-- parametrized pipe , chaining , and custoe pipe  -->
+<div class="datepipe forstring">
+  <p>{{name | uppercase}}</p>
+  <p>{{name | lowercase}}</p>
+  <p>{{name | titlecase}}</p>
+  <p>{{name | slice:5}}</p>
+  <p>{{name | slice:5:9 | uppercase}}</p>
+</div>
+<div class="datepipe parametrized">
+  <p>{{dob}}</p>
+  <p>{{dob | date:"medium"}}</p>
+  <p>{{dob | date:"short"}}</p>
+  <p>{{dob | date:"dd/MM/yyyy"}}</p>
+</div>
+<div class="currency parametrized">
+  <p>{{salary}}</p>
+  <p>{{salary |currency: 'USD':true}}</p>
+  <p>{{salary |currency: 'INR':true}}</p>
+</div>
+
+<div class="datepipe chaining">
+  <p>{{dob | date:"fullDate" | uppercase }}</p>
+</div>
+<div class="percent number">
+  <p>{{ decimal}}</p>
+  <p>{{ decimal | number}}</p>
+  <p>{{ decimal | number:'2.4-8'}}</p>
+  <p>{{ decimal | percent}}</p>
+  <p>{{ decimal | percent:'2.4-8'}}</p>
+</div>
+
+<div class=" json">
+  <p>{{ jsondata}}</p>
+  <p>{{ jsondata | json}}</p>
+  <p>{{ jsondata | slice:1:3 | json }}</p>
+</div>
+
+<div class=" custompipe" *ngFor="let i of jsondata">
+  <p>{{ i.name | mypipe:i.gender}}</p>
+</div>

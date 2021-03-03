@@ -1,0 +1,7 @@
+<!-- two way bindings without ng model-->
+<input [value]="data" (input)="data=$event.target.value" />
+<p>{{data}}</p>
+
+<!-- two way binding with ng model -->
+<input [(ngModel)]="data1" />
+<p>{{data1}}</p>

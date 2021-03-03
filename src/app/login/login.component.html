@@ -1,0 +1,24 @@
+<!-- TEMPLATE DRIVEN FORM -->
+
+<div class="col-6 ">
+	<form #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+		<div class="form-group">
+			<label for="email">Email address:</label>
+			<input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"  name="email" #eml=ngModel ngModel required>
+			<p class="help-block text-danger" [class.d-none]="eml.valid || eml.untouched ">
+				email is required
+			</p>
+			<p *ngIf="eml.errors?.pattern">This is not a valid Email!!!</p>
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control"  name="pwd" #pswd=ngModel
+        [(ngModel)]="password" required >
+			<p class="help-block text-danger" *ngIf="pswd.invalid && pswd.touched">
+				Password is required
+			</p>
+		</div>
+		<button type="submit" class="btn btn-primary"
+        [disabled]="loginForm.invalid">Submit</button>
+	</form>
+</div>
