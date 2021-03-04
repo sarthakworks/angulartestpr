@@ -4,14 +4,17 @@ import { Component, OnInit } from "@angular/core";
   selector: "app-parent",
   template: `
     <app-child [childMessage]="parentMessage"></app-child>
-    <p>
-      parent works!
-    </p>
+
+    <app-child (messageEvent)="receiveMessage($event)"></app-child>
   `
 })
 export class ParentComponent implements OnInit {
   parentMessage = "message from parent";
-  constructor() {}
+  message: string;
+
+  receiveMessage($event) {
+    this.message = $event;
+  }
 
   ngOnInit() {}
 }
