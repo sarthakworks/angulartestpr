@@ -14,6 +14,8 @@ import { NotfoundComponent } from "./notfound/notfound.component";
 import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
 import { AuthService } from './auth.gaurd';
 import { UserloginService } from './services/userlogin.service';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { UserloginService } from './services/userlogin.service';
     MypipePipe,
     RoutingComponent,
     NotfoundComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    ChildComponent,
+    ParentComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService]
