@@ -12,10 +12,10 @@ import { MypipePipe } from "./mypipe.pipe";
 import { RoutingComponent } from "./routing/routing.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
-import { AuthService } from './auth.gaurd';
-import { UserloginService } from './services/userlogin.service';
-import { ChildComponent } from './child/child.component';
-import { ParentComponent } from './parent/parent.component';
+import { AuthService } from "./auth.gaurd";
+import { UserloginService } from "./services/userlogin.service";
+import { ChildComponent } from "./componentInteraction/child/child.component";
+import { ParentComponent } from "./componentInteraction/parent/parent.component";
 
 @NgModule({
   imports: [
