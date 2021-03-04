@@ -31,6 +31,11 @@ export const routes: Routes = [
     component: DatabindingsComponent
   },
   {
+    path: "pipe",
+    canActivate: [AuthService],
+    component: PipeExampleComponent
+  },
+  {
     path: "child",
     canActivate: [AuthService],
     component: ChildComponent
