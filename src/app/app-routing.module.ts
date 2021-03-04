@@ -4,6 +4,8 @@ import { LoginComponent } from "./login/login.component";
 import { DatabindingsComponent } from "./databindings/databindings.component";
 import { PipeExampleComponent } from "./pipe-example/pipe-example.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
+import { ChildComponent } from "./componentInteraction/child/child.component";
+import { ParentComponent } from "./componentInteraction/parent/parent.component";
 import { AuthService } from "./auth.gaurd";
 export const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -28,7 +30,12 @@ export const routes: Routes = [
     canActivate: [AuthService],
     component: DatabindingsComponent
   },
-  { path: "pipe", canActivate: [AuthService], component: PipeExampleComponent },
+  {
+    path: "child",
+    canActivate: [AuthService],
+    component: ChildComponent
+  },
+  { path: "parent", canActivate: [AuthService], component: ParentComponent },
   { path: "**", component: NotfoundComponent }
 ];
 
