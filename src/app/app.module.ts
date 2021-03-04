@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //for ng mode
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./loginTemplateDriven/login.component";
 import { DatabindingsComponent } from "./databindings/databindings.component";
 import { PipeExampleComponent } from "./pipe-example/pipe-example.component";
 import { MypipePipe } from "./mypipe.pipe";
@@ -16,8 +16,8 @@ import { AuthService } from "./auth.gaurd";
 import { UserloginService } from "./services/userlogin.service";
 import { ChildComponent } from "./componentInteraction/child/child.component";
 import { ParentComponent } from "./componentInteraction/parent/parent.component";
-import { Sibling1Component } from './RXJS/sibling1/sibling1.component';
-import { Sibling2Component } from './RXJS/sibling2/sibling2.component';
+import { Sibling1Component } from "./RXJS/sibling1/sibling1.component";
+import { Sibling2Component } from "./RXJS/sibling2/sibling2.component";
 
 @NgModule({
   imports: [
