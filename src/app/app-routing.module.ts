@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./loginTemplateDriven/login.component";
 import { DatabindingsComponent } from "./databindings/databindings.component";
 import { PipeExampleComponent } from "./pipe-example/pipe-example.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
