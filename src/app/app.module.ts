@@ -35,8 +35,8 @@ import { ParentComponent } from "./componentInteraction/parent/parent.component"
     RoutingComponent,
     NotfoundComponent,
     ReactiveformComponent
+    ParentComponent,
     ChildComponent,
-    ParentComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService]
