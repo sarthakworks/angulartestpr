@@ -34,9 +34,9 @@ import { ParentComponent } from "./componentInteraction/parent/parent.component"
     MypipePipe,
     RoutingComponent,
     NotfoundComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
     ParentComponent,
-    ChildComponent,
+    ChildComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService]
