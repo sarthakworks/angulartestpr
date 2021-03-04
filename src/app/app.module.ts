@@ -16,6 +16,8 @@ import { AuthService } from "./auth.gaurd";
 import { UserloginService } from "./services/userlogin.service";
 import { ChildComponent } from "./componentInteraction/child/child.component";
 import { ParentComponent } from "./componentInteraction/parent/parent.component";
+import { Sibling1Component } from './RXJS/sibling1/sibling1.component';
+import { Sibling2Component } from './RXJS/sibling2/sibling2.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,9 @@ import { ParentComponent } from "./componentInteraction/parent/parent.component"
     NotfoundComponent,
     ReactiveformComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    Sibling1Component,
+    Sibling2Component
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService]

@@ -3,9 +3,11 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-parent",
   template: `
-    <app-child [childMessage]="parentMessage"></app-child>
-
-    <app-child (messageEvent)="receiveMessage($event)"></app-child>
+    <app-child
+      [childMessage]="parentMessage"
+      (messageEvent)="receiveMessage($event)"
+    ></app-child>
+    {{ message }}
   `
 })
 export class ParentComponent implements OnInit {
