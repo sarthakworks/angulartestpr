@@ -6,6 +6,7 @@ import { PipeExampleComponent } from "./pipe-example/pipe-example.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { ChildComponent } from "./componentInteraction/child/child.component";
 import { ParentComponent } from "./componentInteraction/parent/parent.component";
+import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
 import { AuthService } from "./auth.gaurd";
 export const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -34,6 +35,11 @@ export const routes: Routes = [
     path: "pipe",
     canActivate: [AuthService],
     component: PipeExampleComponent
+  },
+  {
+    path: "reactive",
+    canActivate: [AuthService],
+    component: ReactiveformComponent
   },
   {
     path: "child",
