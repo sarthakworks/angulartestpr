@@ -1,10 +1,8 @@
-import { Directive } from '@angular/core';
+import { Directive } from "@angular/core";
 
 @Directive({
-  selector: '[appCustomDirectives]'
+  selector: "[appCustomDirectives]"
 })
-export class CustomDirectivesDirective {
-
-  constructor() { }
-
+export class CustomDirective {
+  constructor() {}
 }
