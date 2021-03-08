@@ -21,6 +21,7 @@ import { Sibling2Component } from "./RXJS/sibling2/sibling2.component";
 import { RxjsService } from "./services/rxjs.service";
 import { CustomDirective } from "./directives/custom-attribute.directive";
 import { DirectiveExmplComponent } from './directives/directive-exmpl/directive-exmpl.component';
+import { CustomStructureDirective } from './directives/custom-structure.directive';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { DirectiveExmplComponent } from './directives/directive-exmpl/directive-
     Sibling1Component,
     Sibling2Component,
     CustomDirective,
-    DirectiveExmplComponent
+    DirectiveExmplComponent,
+    CustomStructureDirective
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService, RxjsService]
