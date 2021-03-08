@@ -7,6 +7,8 @@ import { NotfoundComponent } from "./notfound/notfound.component";
 import { ChildComponent } from "./componentInteraction/child/child.component";
 import { ParentComponent } from "./componentInteraction/parent/parent.component";
 import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
+import { DirectiveExmplComponent } from "./directives/directive-exmpl/directive-exmpl.component";
+
 import { AuthService } from "./auth.gaurd";
 export const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -45,6 +47,11 @@ export const routes: Routes = [
     path: "child",
     canActivate: [AuthService],
     component: ChildComponent
+  },
+  {
+    path: "Directive",
+    canActivate: [AuthService],
+    component: DirectiveExmplComponent
   },
   { path: "parent", canActivate: [AuthService], component: ParentComponent },
   { path: "**", component: NotfoundComponent }

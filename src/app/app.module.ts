@@ -19,7 +19,7 @@ import { ParentComponent } from "./componentInteraction/parent/parent.component"
 import { Sibling1Component } from "./RXJS/sibling1/sibling1.component";
 import { Sibling2Component } from "./RXJS/sibling2/sibling2.component";
 import { RxjsService } from "./services/rxjs.service";
-import { CustomDirective } from "./directives/custom-directives.directive";
+import { CustomDirective } from "./directives/custom-attribute.directive";
 import { DirectiveExmplComponent } from './directives/directive-exmpl/directive-exmpl.component';
 
 @NgModule({
