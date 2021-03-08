@@ -14,13 +14,14 @@ import {
 export class CustomDirective implements OnInit {
   @Input() colorA = "blue"; // default color if user doesn't give in property
   @Input() colorB = "yellow";
-  @HostBinding("style.backgroundColor") bgcolor: string = this.colorA;
+  @HostBinding("style.backgroundColor") bgcolor: string;
   constructor(private er: ElementRef, private renderer: Renderer2) {
     // this.er.nativeElement.style.backgroundColor = "green"; // better to use in ngOnInit
   }
 
   ngOnInit() {
-    this.er.nativeElement.style.backgroundColor = "green"; // can give error in service worker
+    this.bgcolor = this.colorA;
+    //this.er.nativeElement.style.backgroundColor = "green"; // can give error in service worker
     this.renderer.setStyle(this.er.nativeElement, "border", "3px solid red"); //using renderer is better as Dom is not required
   }
 
