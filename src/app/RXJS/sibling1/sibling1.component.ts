@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
-import { RxjsService } from "./services/rxjs.service";
+import { RxjsService } from "../../services/rxjs.service";
 @Component({
   selector: "app-sibling1",
   templateUrl: "./sibling1.component.html",

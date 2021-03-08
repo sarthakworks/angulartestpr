@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { RxjsService } from "./services/rxjs.service";
+import { RxjsService } from "../../services/rxjs.service";
 @Component({
   selector: "app-sibling2",
   templateUrl: "./sibling2.component.html",
