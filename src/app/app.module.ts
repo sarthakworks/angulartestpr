@@ -16,11 +16,11 @@ import { AuthService } from "./auth.gaurd";
 import { UserloginService } from "./services/userlogin.service";
 import { ChildComponent } from "./componentInteraction/child/child.component";
 import { ParentComponent } from "./componentInteraction/parent/parent.component";
-
 import { RxjsService } from "./services/rxjs.service";
 import { CustomDirective } from "./directives/custom-attribute.directive";
 import { DirectiveExmplComponent } from "./directives/directive-exmpl/directive-exmpl.component";
 import { CustomStructureDirective } from "./directives/custom-structure.directive";
+import { HttpPostComponent } from './RXJS/http-post/http-post.component';
 
 @NgModule({
   imports: [
@@ -42,10 +42,10 @@ import { CustomStructureDirective } from "./directives/custom-structure.directiv
     ReactiveformComponent,
     ParentComponent,
     ChildComponent,
-
     CustomDirective,
     DirectiveExmplComponent,
-    CustomStructureDirective
+    CustomStructureDirective,
+    HttpPostComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthService, UserloginService, RxjsService]
