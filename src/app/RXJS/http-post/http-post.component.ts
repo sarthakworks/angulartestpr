@@ -26,6 +26,13 @@ export class HttpPostComponent implements OnInit {
 
   onFetchPosts() {
     // Send Http request
+    this.http
+      .get(
+        "https://mimetic-core-246218-default-rtdb.firebaseio.com//posts.json"
+      )
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
   }
 
   onClearPosts() {
