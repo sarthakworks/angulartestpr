@@ -1,41 +1,73 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
+import { Subscription } from "rxjs";
+import { Post } from "./post.model";
+import { PostsService } from "./posts.service";
 @Component({
   selector: "app-http-post",
   templateUrl: "./http-post.component.html",
   styleUrls: ["./http-post.component.css"]
 })
-export class HttpPostComponent implements OnInit {
-  loadedPosts = [];
+export class HttpPostComponent implements OnInit, OnDestroy {
+  loadedPosts: Post[] = [];
+  isFetching = false;
+  error = null;
+  private errorSub: Subscription;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private postsService: PostsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.errorSub = this.postsService.error.subscribe(errorMessage => {
+      this.error = errorMessage;
+    });
 
-  onCreatePost(postData: { title: string; content: string }) {
+    this.isFetching = true;
+    this.postsService.fetchPosts().subscribe(
+      posts => {
+        this.isFetching = false;
+        this.loadedPosts = posts;
+      },
+      error => {
+        this.isFetching = false;
+        this.error = error.message;
+      }
+    );
+  }
+
+  onCreatePost(postData: Post) {
     // Send Http request
-    this.http
-      .post(
-        "https://mimetic-core-246218-default-rtdb.firebaseio.com//posts.json",
-        postData
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+    this.postsService.createAndStorePost(postData.title, postData.content);
   }
 
   onFetchPosts() {
     // Send Http request
-    this.http
-      .get(
-        "https://mimetic-core-246218-default-rtdb.firebaseio.com//posts.json"
-      )
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+    this.isFetching = true;
+    this.postsService.fetchPosts().subscribe(
+      posts => {
+        this.isFetching = false;
+        this.loadedPosts = posts;
+      },
+      error => {
+        this.isFetching = false;
+        this.error = error.message;
+        console.log(error);
+      }
+    );
   }
 
   onClearPosts() {
     // Send Http request
+    this.postsService.deletePosts().subscribe(() => {
+      this.loadedPosts = [];
+    });
+  }
+
+  onHandleError() {
+    this.error = null;
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
   }
 }
