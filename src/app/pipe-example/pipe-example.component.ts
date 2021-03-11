@@ -14,17 +14,20 @@ export class PipeExampleComponent implements OnInit {
     {
       name: "sarthak",
       id: 1,
-      gender: "male"
+      gender: "male",
+      started: new Date(15, 1, 2017)
     },
     {
       name: "rahul",
       id: 2,
-      gender: "female"
+      gender: "female",
+      started: new Date(15, 1, 2018)
     },
     {
       name: "ram",
       id: 3,
-      gender: "male"
+      gender: "male",
+      started: new Date(15, 1, 2019)
     }
   ];
   constructor() {}
